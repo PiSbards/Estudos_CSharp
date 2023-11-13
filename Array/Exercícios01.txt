@@ -1,0 +1,114 @@
+exercício 01:
+
+__________________________________________
+exercício 02:
+using static System.Console;
+
+int[] numeros = {};
+int num1,num2,num3,num4,num5;
+WriteLine("Digite 5 números para serem armazenados:");
+num1 = Convert.ToInt32(ReadLine());
+num2 = Convert.ToInt32(ReadLine());
+num3 = Convert.ToInt32(ReadLine());
+num4 = Convert.ToInt32(ReadLine());
+num5 = Convert.ToInt32(ReadLine());
+List<int> lista = new List<int>(numeros.ToList());
+lista.Add(num1);
+lista.Add(num2);
+lista.Add(num3);
+lista.Add(num4);
+lista.Add(num5);
+numeros = lista.ToArray();
+WriteLine("Seus número são:");
+foreach (int item in numeros)
+{
+    WriteLine(item);
+}
+
+ReadKey();
+
+CORREÇÃO:
+using static System.Console;
+
+int[] numeros = new int [5];
+WriteLine("Digite 5 números para serem armazenados:");
+WriteLine("Pressione ENTER para cada número");
+for (int i = 0; i < numeros.Length; i++)
+{
+    WriteLine("Digite o número " + (i + 1));
+    numeros[i] = Convert.ToInt32(ReadLine());
+}
+Clear();
+WriteLine("--------------------------------");
+WriteLine("Estes são os números que você digitou:");
+foreach (int item in numeros)   //pode usar o "for" também
+{                                     for (int n = 0; n < numeros.Length; n++)
+                                      {
+    WriteLine(item);                        writeline(numeros[n]);
+}                                     }
+ReadKey();
+
+________________________________________________
+Exercício 03:
+using static System.Console;
+
+int[] numeros = new int[10];
+int[] pares = new int[10];
+int[] impares = new int[10];
+int num;
+WriteLine("Digite 10 números, inteiros e maiores que 0:");
+WriteLine("Pressione ENTER para cada número");
+for (int i = 0; i < numeros.Length; i++)
+{
+    WriteLine("Digite o número " + (i + 1));
+    num = Convert.ToInt32(ReadLine());
+    if (num<=0)
+    {
+        WriteLine("Você digitou um número menor igual a zero!");
+    }
+    else
+    {
+        numeros[i] = num;
+    }
+}
+Clear();
+for (int p = 0; p < numeros.Length; p++)
+{
+    if (numeros[p]%2==0)
+    {
+        pares[p] = numeros[p];
+    }
+    else
+    {
+        impares[p] = numeros[p];
+    }
+}
+WriteLine("___________________________________");
+WriteLine("Estes foram todos os seus números: ");
+WriteLine("___________________________________");
+foreach (int item in numeros)
+{
+    WriteLine(item);
+}
+WriteLine("___________________________________");
+WriteLine("Estes são PARES:");
+WriteLine("___________________________________");
+foreach (int item2 in pares)
+{
+    if (item2!=0)
+    {
+        WriteLine(item2);
+    }
+}
+WriteLine("___________________________________");
+WriteLine("Estes são IMPARES");
+WriteLine("___________________________________");
+foreach (int item3 in impares)
+{
+    if (item3!=0)
+    {
+        WriteLine(item3);
+    }
+}
+
+ReadKey();

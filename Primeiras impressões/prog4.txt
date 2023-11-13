@@ -1,0 +1,8 @@
+string nome = "";
+string idade = "";
+Console.WriteLine("Como é o seu nome:");
+nome = Console.ReadLine();
+Console.WriteLine("Qual é a sua idade");
+idade = Console.ReadLine();
+Console.WriteLine("Seu nome:" + nome + ", e sua idade é " + idade);
+Console.ReadKey();

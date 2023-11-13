@@ -1,0 +1,39 @@
+>>>>Exerc1
+
+using static System.Console;
+
+string nome = "Emerson";
+string cidade = "Maringá";
+string email = "emersonb6@gmail.com";
+
+WriteLine($"Seu nome é {nome}, e você mora em {cidade}, e seu e-mail é {email}");
+ReadKey();
+
+>>>>Exerc2
+using static System.Console;
+
+int n1, n2, soma;
+
+WriteLine("Digite o 1º número:");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Digite o 2º número:");
+n2 = Convert.ToInt32(ReadLine());
+soma = n1 + n2;
+WriteLine($"A soma de {n1}+{n2} foi: {soma}");
+ReadKey();
+
+>>>>Exerc3
+using static System.Console;
+
+double altura, peso, imc;
+string nome;
+
+WriteLine("Digite o seu nome:");
+nome = ReadLine();
+WriteLine("Digite o seu peso:");
+peso = Convert.ToDouble(ReadLine());
+WriteLine("Digite a sua altura:");
+altura = Convert.ToDouble(ReadLine());
+imc = peso / (altura * altura);
+WriteLine($"Olá {nome}, o resultado do seu IMC foi: {imc.ToString("F")}");
+ReadKey();

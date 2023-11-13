@@ -1,0 +1,70 @@
+Laços de repetição
+-for
+-while
+-foreach
+-exercícios
+
+-Laços de repetição:
+	-usado quando é necessário executar um bloco de código repetidas vezes, deve-se usar as estruturas de repetição
+desta forma não há necessidade de repetir os códigos necessários para a ação.
+	-as estruturas são usadas para controlar a execução de códigios até que uma condição se torne verdadeira.
+-for:
+	-trabalha checando uma condição para executar um bloco de código até que para executar um bloco de código até que essa condição seja
+verdadeira: for(inicialização;condição lógica;incremento)
+	EX: for(i=0, i<=4,I++) i++ = i=i+1;
+                     0<=4                i=0+1(V)
+                     1<=4                i=1+1(V)
+                     2<=4                i=2+1(V)
+                     3<=4                i=3+1(V)
+                     4<=4                i=4+1(F)
+                     5<=4(F) - para a repetição
+___________________________________________________
+
+using static System.Console;
+
+int n1, n2;
+WriteLine("Digite um número");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Digite um segundo número");
+n2 = Convert.ToInt32(ReadLine());
+if (n2>n1)
+{
+    for (int i = n1 + 1; i < n2; i++)
+    {
+        WriteLine("Valor da variável: " + i.ToString());
+    }
+}
+else
+{
+    WriteLine("Falha...");
+}
+______________________________________________________
+-while:
+	-Apenas colocamos apenas a condição que queremos testar:
+
+int contador = 2;
+while (contador !=10)
+{
+    WriteLine(contador.ToString());
+    contador++;
+}
+______________________________________________________
+
+-foreach:
+é usado para interagir(percorrer) listas
+foreach(<tipo de dado><nome>in<lista>)
+
+EX01:
+string[] nomes = { "Cleber", "Roberto", "Denis", "Jorge" };
+foreach  (string pessoa in nomes)
+{
+    WriteLine($"Os integrantes do grupo são:{pessoa}");
+}
+______________________________________________________
+EX02:
+int[] array = new int[] { 1, 2, 3, 4, 5, 6 };//outro jeito de escrever o array/lista
+foreach (var item in array)
+{
+    WriteLine(item);
+}
+_________________________________________________________________________________________________________

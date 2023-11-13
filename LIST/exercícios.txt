@@ -1,0 +1,458 @@
+Pietro Sbardellati:
+
+Exercício 01:
+
+ArrayList alunos= new ArrayList();
+ArrayList idade= new ArrayList();
+using System.Collections;
+using static System.Console;
+
+ArrayList alunos= new ArrayList();
+ArrayList idade= new ArrayList();
+WriteLine("Escreva o nome de 10 alunos:");
+WriteLine("Aperte ENTER para confirmar a cada nome digitado");
+for (int i = 0; i < 10; i++)
+{
+    WriteLine($"Digite o {i + 1}º nome:");
+    alunos.Add(ReadLine());
+}
+Clear();
+WriteLine("Agora Digite suas respectivas idades:");
+WriteLine("Aperte ENTER para confirmar a cada idade digitada");
+for (int i = 0; i < 10; i++)
+{
+    WriteLine($"Digite a {i + 1}ª idade");
+    idade.Add(ReadLine());
+}
+Clear();
+WriteLine("===================================");
+WriteLine("=            Lista Digitada       =");
+WriteLine("=            Ordem Alfabética     =");
+WriteLine("===================================");
+WriteLine("\n");
+alunos.Sort();
+idade.Sort();
+foreach (var item in alunos)
+{
+    WriteLine(item);
+}
+WriteLine("===================================");
+WriteLine("=      Idade do Menor para o Maior=");
+WriteLine("===================================");
+foreach (var item2 in idade)
+{
+    WriteLine(item2);
+}
+WriteLine("\n");
+WriteLine($"Aluno mais Novo: {alunos[0]}");
+WriteLine($"Aluno mais velho: {alunos[9]}");
+ReadKey();
+___________________________________________________________
+Exercício 02:
+
+using System.Collections;
+using static System.Console;
+
+List<string> alunos = new List<string>();
+List<int> notas = new List<int>();
+for (int i = 0; i < 10; i++)
+{
+    WriteLine($"Digite o {i + 1}º aluno:");
+    alunos.Add(ReadLine());
+    WriteLine($"Digite a {i + 1}º nota do aluno:");
+    notas.Add(Convert.ToInt32(ReadLine()));
+}
+Clear();
+WriteLine("================================");
+WriteLine("=       Lista Digitada         =");
+WriteLine("================================");
+WriteLine();
+int soma = 0;
+int media = 0;
+foreach (int item in notas)
+{
+    soma += item;
+}
+media = soma / 10;
+WriteLine("=====================================");
+WriteLine($"= A média dos alunos foi: {media}  =");
+WriteLine("=====================================");
+int posicao = 0;
+foreach (string aluno in alunos)
+{
+    WriteLine($"Aluno: {aluno} - Nota: {notas[posicao]}");
+    posicao++;
+}
+ReadKey();
+_____________________________________________________________________________
+Exercício 03:
+
+using System.Collections;
+using static System.Console;
+
+ArrayList modelos = new ArrayList();
+List<int> idade = new List<int>();
+ArrayList aptas = new ArrayList();
+List<int> idadeaptas = new List<int>();
+WriteLine("Escreva o nome das 20 modelos:");
+WriteLine("Aperte ENTER para confirmar a cada nome digitado");
+for (int i = 0; i < 20; i++)
+{
+    WriteLine($"Digite o {i + 1}º nome:");
+    modelos.Add(ReadLine());
+    WriteLine("\n");
+
+    WriteLine($"Digite a {i + 1}ª idade");
+    idade.Add(Convert.ToInt32(ReadLine()));
+    WriteLine("\n");
+}
+Clear();
+for (int i = 0; i < 20; i++)
+{
+    if (idade[i] >= 18 && idade[i] <= 20)
+    {
+        aptas.Add(modelos[i]);
+        idadeaptas.Add(idade[i]);
+    }
+}
+WriteLine("=======================================");
+WriteLine("=      As modelos aptas são           =");
+WriteLine("=======================================");
+for(int i = 0; i<aptas.Count; i++){
+	Writeline($"Nome da modelo: {aptas[i]} || idade: {idadeaptas[i]});
+}
+ReadKey();
+//outro jeito de resolver:
+foreach(var item in idade){
+	if(item>=18 && item <=20){
+	var a = idade.index(x=>x==item);
+	aptas.add(modelos[a]);
+	idadeaptas.add(idade[a]);
+	}
+}
+___________________________________________________________________________
+Exercício 04:
+
+using System.Collections;
+using static System.Console;
+
+List<int> V1 = new List<int>();
+List<int> V2 = new List<int>();
+WriteLine("Escreva uma lista de 20 números inteiros:");
+WriteLine("Aperte ENTER para confirmar a cada nome digitado");
+for (int i = 0; i < 20; i++)
+{
+    WriteLine($"Digite o {i + 1}º número:");
+    V1.Add(Convert.ToInt32(ReadLine()));
+}
+Clear();
+WriteLine("Escreva outra lista de 20 números inteiros:");
+WriteLine("Aperte ENTER para confirmar a cada nome digitado");
+for (int i = 0; i < 20; i++)
+{
+    WriteLine($"Digite a {i + 1}° número");
+    V2.Add(Convert.ToInt32(ReadLine()));
+}
+Clear();
+int identicos = 0;
+for (int i = 0; i < 20; i++)
+{
+    if (V1[i] == V2[i])
+    {
+        identicos++;
+        
+    }
+    
+}
+WriteLine("==================================================");
+WriteLine($"= V1 e V2 possuem {identicos} valores identicos =");
+WriteLine("==================================================");
+ReadKey();
+______________________________________________________________________________
+Exercício 05:
+using System.Collections;
+using static System.Console;
+
+ArrayList alunos = new ArrayList(15);
+List<double> notas = new List<double>(15);
+WriteLine("Escreva o nome dos 15 alunos e suas respectivas notas:");
+WriteLine("Aperte ENTER para confirmar a cada digitação");
+for (int i = 0; i < 15; i++)
+{
+    WriteLine($"Digite o {i + 1}º Aluno:");
+    alunos.Add(ReadLine());
+    WriteLine("\n");
+
+    WriteLine($"Digite a {i + 1}ª nota");
+    notas.Add(Convert.ToInt32(ReadLine()));
+    WriteLine("\n");
+}
+Clear();
+int soma = 0;
+int media = 0;             //DA PARA FAZER ASSIM MAIS FACIL DE FAZER POUPA LINHA;  "media=notas.Avarage();" JÁ FAZ DIRETO A MÉDIA DA LISTA;
+foreach (int item in notas)
+{
+    soma += item;
+}
+media = soma / 15;
+int notaacima = 0, abaixo5 = 0;
+for (int i = 0; i < 15; i++)
+{
+    if (notas[i] > 7)
+    {
+        notaacima++;
+    }
+    if (notas[i]<=5)
+    {
+        abaixo5++;
+    }
+}
+if (abaixo5 == notas.Count)
+{
+    WriteLine("==============================================");
+    WriteLine($"= Não há nenhum aluno com a nota acima de 5 =");
+    WriteLine("==============================================");
+}
+WriteLine("=====================================");
+WriteLine($"= A média dos alunos foi: {media} =");
+WriteLine($"= Há {notaacima} alunos com nota acima de 7.0 =");
+WriteLine("=====================================");
+ReadKey();
+__________________________________________________________________________
+Exercício 06:
+
+using System.Collections;
+using static System.Console;
+
+List<double> voltas= new List<double>(12);
+double melhortempo = 0, melhor_posicao = 0;
+WriteLine("Escreva o tempo de cada volta");
+WriteLine("Aperte ENTER para confirmar a cada digitação");
+for(int i=0; i < 12; i++)
+{
+    WriteLine($"Digite o tempo da {i + 1}ª volta: ");
+    voltas.Add(Convert.ToDouble(ReadLine()));            (menor valor da lista)       (maior valor da lista)
+    if (i==0)						//melhortempo=voltas.Min();      voltas.Max();
+    {							//melhor_posicao=voltas.FindIndex(x=> x==menortempo);
+        melhortempo = voltas[i];
+    }
+    if (voltas[i] < melhortempo)
+    {
+
+        melhortempo = voltas[i];
+        melhor_posicao= i;
+
+    }
+
+}
+double media=voltas.Average();
+WriteLine("================================================");
+WriteLine($"= O melhor tempo foi de: {melhortempo}  =");
+WriteLine($"= A volta do melhor tempo foi a: {melhor_posicao+1}° =");
+WriteLine($"= O tempo médio das 12 voltas foram de {media("F")} =");
+WriteLine("================================================");
+
+ReadKey();
+___________________________________________________________________________
+Exercício 07:
+
+using System.Collections;
+using static System.Console;
+
+List<int> num= new List<int>();
+int maior = 0, qtdnumerica;
+WriteLine("Escreva a quantidade de números da lista");
+qtdnumerica = Convert.ToInt32(ReadLine());
+Clear();
+WriteLine("Agora, escreva vários numeros conforme a quantidade que você expecificou");
+WriteLine("Aperte ENTER para confirmar a cada digitação");
+for(int i=0; i < qtdnumerica; i++)
+{   
+    WriteLine($"Digite o {i+1}° número: ");
+    int numero= Convert.ToInt32(ReadLine());
+    if (numero>0)
+    {
+        num.Add(numero);
+    }
+    else
+    {
+        WriteLine("Número invalido");
+        i--;
+    }   
+    if (i==0)
+    {
+        maior = num[i];
+    }
+    if (num[i] > maior)
+    {
+
+        maior = num[i];
+    }
+}
+int soma = 0, media;
+foreach (int item in num)
+{
+    soma += item;
+}
+media = soma / num.Count;
+WriteLine("================================");
+WriteLine($"= O maior número é o {maior}  =");
+WriteLine($"= A média da lista é de: {media} =");
+WriteLine("=================================");
+
+ReadKey();
+____________________________________________________________________________________
+exercício 08:
+
+using System.Collections;
+using static System.Console;
+
+List<double> G1= new List<double>();
+List<double> G2= new List<double>();
+List<double> G3= new List<double>();
+int qtdnumerica;
+WriteLine("Escreva a quantidade de alunos e confirme com ENTER.");
+qtdnumerica = Convert.ToInt32(ReadLine());
+Clear();
+WriteLine("Agora, escreva as notas conforme são solicitadas.");
+WriteLine("Aperte ENTER para confirmar a cada digitação");
+for (int i = 0; i < qtdnumerica; i++)
+{
+    WriteLine($"Digite o {i + 1}ª nota G1");
+    G1.Add(Convert.ToDouble(ReadLine()));
+
+    WriteLine($"Digite o {i + 1}ª nota G2");
+    G2.Add(Convert.ToDouble(ReadLine()));
+}
+for (int i = 0; i < qtdnumerica; i++)
+{
+    G3.Add((G1[i] + G2[i]) / 2);
+}
+Clear();
+WriteLine("=====================================================================");
+for (int i = 0; i < qtdnumerica; i++)
+{
+    WriteLine($"= Nota do {i + 1}° aluno: G1:{G1[i]}; Nota G2: {G2[i]}; Média aritmética: {G3[i]} =");
+}
+WriteLine("=====================================================================");
+
+ReadKey();
+
+____________________________________________________________________________________________________
+Exercício 09:
+
+using System.Collections;
+using static System.Console;
+
+List<int> G1 = new List<int>();
+List<int> G2 = new List<int>();
+List<int> G3 = new List<int>();
+
+
+WriteLine("Escreva 10 números inteiros");
+WriteLine("Aperte ENTER para confirmar a cada digitação");
+for (int i = 0; i < 10; i++){
+
+    WriteLine($"Digite o {i + 1}° número");
+    int numero=Convert.ToInt32(ReadLine());
+
+    if (numero > 0)
+    {
+        G1.Add(numero);
+    }
+    else
+    {
+        WriteLine("Número invalido");
+        WriteLine("\n");
+        i--;
+    }
+}
+for (int i = 0; i < 10; i++)
+{
+    if (G1[i] % 2 == 0)
+    {
+        G2.Add(G1[i]);
+    }
+    else
+    {
+        G3.Add(G1[i]);
+    }
+}
+
+Clear();
+WriteLine("=====================================================================");
+WriteLine("=                 Lista informada pelo Usuário                      =");
+foreach (int i in G1)
+{
+    WriteLine(i);
+}
+WriteLine("=====================================================================");
+WriteLine("=====================================================================");
+WriteLine("=                       Números Pares                               =");
+foreach (var pares in G2)
+{
+    WriteLine(pares);
+}
+WriteLine("=====================================================================");
+WriteLine("=====================================================================");
+WriteLine("=                      Números Ímpares                              =");
+foreach (var impares in G3)
+{
+    WriteLine(impares);
+}
+WriteLine("=====================================================================");
+ReadKey();
+_________________________________________________________________________________
+Exercício 10:
+
+using System.Collections;
+using static System.Console;
+
+List<int> Gabarito = new List<int> { 1,1,2,2,3,3,1,1,2,2,3,3,1};
+List<int> Resposta = new List<int>(13);
+List<int> acertos = new List<int>();
+string nomejogador;
+int ndocartao = 0;
+WriteLine("Aperte ENTER para confirmar toda informação");
+WriteLine("Jogador escreva seu nome: ");
+nomejogador = ReadLine();
+WriteLine("Agora Escreva o número do seu cartão de resposta:");
+ndocartao = Convert.ToInt32(ReadLine());
+for (int i = 0; i < 13; i++)
+{
+    WriteLine($"Escreva o {i + 1}° número");
+    int numero = Convert.ToInt32(ReadLine());
+    if (numero >= 1 && numero <= 3)
+    {
+        Resposta.Add(numero);
+    }
+    else
+    {
+        WriteLine("Número invalido, DIGITE NOVAMENTE:");
+        i--;
+    }
+}                                             //Também tem como fazer... diminui uma lista, menos memoria e linhas. também em vez de criar outra lista     
+for (int i = 0; i < 13; i++)                  //int a=0;                                                            era somente criar o a++ em
+{                                             //foreach(var item in Gabarito){                                      acertos.Add(Resposta[i]
+    if (Gabarito[i] == Resposta[i])           //       int pos=Gabarito.FindIndex(x=> x==item);                     e modificar o resto do cod de acordo
+    {                                         //       if(resposta[pos]==item){
+        acertos.Add(Resposta[i]);             //          a++
+                                              //       }
+    }                                         //}
+}
+Clear();
+WriteLine("=========================================================");
+WriteLine($"= Nome do Jogador {nomejogador}, N° do Cartão de Respostas: {ndocartao} =");
+if (acertos.Count == 13)
+{
+    WriteLine("=========================================================");
+    WriteLine("= PARABÉNS VOCÊ É O GANHADOR!!!!!!!");
+    WriteLine("=========================================================");
+}
+else
+{
+    WriteLine("=========================================================");
+    WriteLine($"= Infelizmente não GANHOU - Número de acertos: {acertos.Count} ="); //no segundo caso seria {a}...
+    WriteLine("=========================================================");
+}
+ReadKey();

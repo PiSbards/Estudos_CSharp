@@ -1,0 +1,199 @@
+Aluno: Pietro Sbardellati
+
+Exercício 01:
+
+using static System.Console;
+
+int a, b;
+WriteLine("Escreva um número:");
+a = Convert.ToInt32(ReadLine());
+WriteLine("Escreva outro número");
+b = Convert.ToInt32(ReadLine());
+if (a>b)
+{
+    WriteLine($"O maior número é o {a}");
+
+}
+else
+{
+    WriteLine($"O maior número é o {b}");
+}
+    ReadKey();
+______________________________________________________
+
+
+Exercício 02:
+
+using static System.Console;
+
+int a, b, c;
+WriteLine("Fale um número");
+a = Convert.ToInt32(ReadLine());
+WriteLine("Fale outro número");
+b = Convert.ToInt32(ReadLine());
+WriteLine("Fale um ultimo número");
+c = Convert.ToInt32(ReadLine());
+if (a>b && a>c)
+{
+    WriteLine($"O número {a}, da 1º Variavel é o maior");
+}
+else if (b>c && b>a)
+{
+    WriteLine($"O número {b}, da 2º Variavel é o maior");
+}
+else
+{
+    WriteLine($"O número {c}, da 3º Variavel é o maior");
+}
+if (a<b && a<c)
+{
+    WriteLine($"O número {a}, da 1º Variavel é o menor");
+}
+else if (b<a && b<c)
+{
+    WriteLine($"O número {b}, da 2º Variavel é o menor");
+}
+else
+{
+    WriteLine($"O número {c}, da 3º Variavel é o menor");
+}
+ReadKey();
+
+_________________________________________________________
+ 
+Exercício 03:
+
+using static System.Console;
+
+double a, b, media;
+WriteLine("Escreva a 1ª nota do aluno:");
+a = Convert.ToDouble(ReadLine());
+WriteLine("Escreva a 2ª nota do aluno: ");
+b = Convert.ToDouble(ReadLine());
+media = (a + b) / 2;
+WriteLine($"A média do aluno é {media}");
+if (media>=7 && media<10)//DICA: QUANDO USAR NUMEROS, MENOR PARA MAIOR!!!
+{
+    WriteLine("APROVADO");
+}
+else if (media==10)
+{
+    WriteLine("APROVADO COM DISTINÇÃO");
+}
+else
+{
+    WriteLine("REPROVADO");
+}
+ReadKey();
+________________________________________________________
+
+Exercício 04:
+using static System.Console;
+
+double produto1, produto2, produto3;
+WriteLine("Qual o preço do 1º produto");
+produto1 = Convert.ToDouble(ReadLine());
+WriteLine("Qual o preço do 2º produto");
+produto2 = Convert.ToDouble(ReadLine());
+WriteLine("Qual o preço do 3º produto");
+produto3 = Convert.ToDouble(ReadLine());
+if (produto1<produto2 && produto1<produto3)
+{
+    WriteLine("Você deve comprar o 1º Produto, pois é o mais barato");
+}
+else if (produto2<produto1 && produto2<produto3)
+{
+    WriteLine("Você deve comprar o 2º Produto, pois é o mais barato");
+}
+else if (produto3<produto1 && produto3<produto2)
+{
+    WriteLine("Você deve comprar o 3º Produto, pois é o mais barato");
+}
+else
+{
+    WriteLine("Erro no valor, redigite o preço do produto");
+}
+ReadKey();
+__________________________________________________________________________
+Exercício 05:
+using static System.Console;
+
+double a;
+WriteLine("Escreva um número inteiro");
+a = Convert.ToDouble(ReadLine());
+if (a%2 == 0)
+{
+    WriteLine("Seu número é PAR");
+}
+else
+{
+    WriteLine("Seu número é IMPAR");
+}
+ReadKey();
+
+___________________________________________________________________________
+Exercício 06:
+using static System.Console;
+
+int idade;
+WriteLine("Escreva sua idade e saiba se você pode doar sangue");
+idade = Convert.ToInt32(ReadLine());
+if (idade>=18 && idade<=67)
+{
+    WriteLine("Parabéns, você pode doar sangue!!");
+}
+else
+{
+    WriteLine("Infelizmente, com sua idade, não é possivel doar sangue.");
+}
+ReadKey();
+____________________________________________________________________________
+Exercício 07:
+using static System.Console;
+
+int A, B, C;
+A = 10;
+B = 20;
+WriteLine($"O valor de A={A} e o Valor de B={B}, inverta os valores, usando atribuição");
+C=10;
+A=20;
+B = C;
+WriteLine($"Agora os valores das variaveis estão invertidos, A={A} e B={B}");
+ReadKey();
+____________________________________________________________________________
+Exercício 08:
+using static System.Console;
+
+double Ncarros, valortotal, salario, bonificação, final;
+WriteLine("Quantidade de carros vendidos:");
+Ncarros = Convert.ToDouble(ReadLine());
+WriteLine("Qual o valor total de carros vendidos");
+valortotal = Convert.ToDouble(ReadLine());
+WriteLine("Valor do Salário fixo:");
+salario = Convert.ToDouble(ReadLine());
+bonificação=Ncarros*0.05;
+final = salario + (valortotal * bonificação);
+WriteLine($"O valor final que o funcionário receberá é $R{final}!");
+ReadKey();
+
+____________________________________________________________________________
+Exercício 09:
+using static System.Console;
+
+double far, cel;
+WriteLine("Digite a temperatura em Farenheit");
+far = Convert.ToDouble(ReadLine());
+cel = (far - 32) * 5 / 9;
+WriteLine($"A temperatura em graus Celcius foi de: {Math.Round(cel, 2)}º");
+ReadKey();
+
+_____________________________________________________________________________
+Exercício 10:
+using static System.Console;
+
+double ms, kh;
+WriteLine("Digite a velocidade em m/s");
+ms = Convert.ToDouble(ReadLine());
+kh = ms * 3.6;
+WriteLine($"A velocidade em Km/h é de: {Math.Round(kh, 2)}");
+ReadKey();

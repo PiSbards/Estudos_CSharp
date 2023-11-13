@@ -1,0 +1,103 @@
+List<T> fornece funcionalidade para criar uma lista de objetos, localizar itens de lista...
+
+
+
+using System.Collections;//necessário para usar o método list
+using static System.Console;
+
+ArrayList nomes=new ArrayList();// list<string>nomes=new list<string>(); outra forma de escrever
+nomes.Add("Ana");
+nomes.Add("Marilene");
+nomes.Add("Jorge");
+nomes.Add("Kratos");
+nomes.Insert(4, "Jorginho");//inserir individual
+foreach(var a in nomes)
+{
+    Console.WriteLine(a);
+}
+WriteLine("============================================");
+string[] novosnomes = { "Jaspion", "Goku", "Luffy" };
+nomes.InsertRange(2, novosnomes);//inserir conjunto
+foreach (var item in nomes)
+{
+    WriteLine(item);
+}
+WriteLine("============================================");
+nomes.Remove("Jaspion");//retirar
+foreach (var item1 in nomes)
+{
+    WriteLine(item1);
+}
+WriteLine("============================================");
+nomes.RemoveAt(1);//retirar em posição especifica
+foreach (var item2 in nomes)
+{
+    WriteLine(item2);
+}
+WriteLine("============================================");
+nomes.RemoveRange(3, 2);//primeiro número é a partir de qual item quer remover, segundo número é quantidade que ira tirar
+foreach (var item3 in nomes)
+{
+    WriteLine(item3);
+}
+WriteLine("============================================");
+int posicao = nomes.IndexOf("Jorginho");
+if (posicao >= 0)
+{
+    WriteLine($"O nome procurado esta na posição:{posicao}");
+    WriteLine($"O nome procurado foi: {nomes[posicao]}");
+}
+else
+{
+    WriteLine("Não existe o nome na lista");
+}
+WriteLine("============================================");
+nomes.Sort();
+foreach(var item5 in nomes)
+{
+    WriteLine(item5);
+}
+WriteLine("============================================");
+nomes.Reverse();
+foreach (var item6 in nomes)
+{
+    WriteLine(item6);
+}
+WriteLine("============================================");
+nomes.Clear();//limpa o conteudo da lista
+foreach (var item4 in nomes)
+{
+    WriteLine(item4);
+}    
+WriteLine("============================================");
+WriteLine($"Quantidade de nomes {nomes.Count}");//Quantidade
+WriteLine($"Capacidade: {nomes.Capacity}");//Capacidade
+ReadKey();
+-----------------------------------------------------------------------------------------
+using System.Collections;//necessário para usar o método list
+using static System.Console;
+
+ArrayList nomes = new ArrayList();
+WriteLine("Digite 10 nomes...");
+WriteLine("Aperte ENTER para confirmar a cada nome digitado");
+for (int i = 0; i < 10; i++)
+{
+    WriteLine($"Digite o {i + 1}º nome");
+    nomes.Add(ReadLine());
+}
+Clear();
+WriteLine("===================================");
+WriteLine("=            Lista Digitada       =");
+WriteLine("=            Ordem Alfabética     =");
+WriteLine("===================================");
+WriteLine("\n");
+nomes.Sort();
+foreach (var item in nomes)
+{
+    WriteLine(item);
+}
+WriteLine("\n");
+WriteLine($"Primeiro nome: {nomes[0]}");
+WriteLine($"Último nome: {nomes[9]}");
+
+ReadKey();

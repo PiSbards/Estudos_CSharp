@@ -1,0 +1,39 @@
+Exercícios:
+01 - 
+using static System.Console;
+string nome = "";
+string email = "";
+string cidade = "";
+WriteLine("Qual seu nome?");
+nome = ReadLine();
+WriteLine("Agora, qual sua cidade?");
+cidade = ReadLine();
+WriteLine("Agora digite seu e-mail:");
+email = ReadLine();
+WriteLine($"suas informações pessoais são:{nome},{cidade} e {email}");
+ReadKey();
+
+02-
+using static System.Console;
+int n1, n2, resultado;
+WriteLine("digite o 1º número:");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("digite o 2º número:");
+n2 = Convert.ToInt32(ReadLine());
+resultado = n1 + n2;
+WriteLine($"O primeiro número é {n1},o seu segundo número é {n2}, a soma de ambos os números é de {resultado}");
+ReadKey();
+
+03-
+using static System.Console;
+string nome;
+WriteLine("Qual seu nome?");
+nome=ReadLine();
+double peso, altura, resultado;
+WriteLine("Calcule seu IMC, primeiro digite seu peso:");
+peso = Convert.ToDouble(ReadLine());
+WriteLine("Agora, digite a sua altura");
+altura = Convert.ToDouble(ReadLine());
+resultado = peso / (altura * altura);
+WriteLine($"Olá {nome} e seu IMC foi:{resultado.ToString("F")}");
+ReadKey();

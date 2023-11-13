@@ -1,0 +1,177 @@
+é um bloco de código que tem inicio e fim;
+
+           public void int Drive(int km, int velocidade);
+             ||    ||
+             ||    afirmando que pode ou não ter um retorno;
+            modulo é publico ou privado;
+______________________________________________________________________________________________________
+lista de parâmetros - incluidos entre parênteses, usados para passar e recever dados de um método.
+refere-se a ordem e número de um métodos, são opcionais, ou seja, um método pode não ter parâmetros;
+______________________________________________________________________________________________________
+Niveis de acesso - Public: pode ser acessado de toda classe;
+private: somente tem acesso somente na sua classe;
+______________________________________________________________________________________________________
+Exemplo 1:
+using static System.Console;
+
+namespace ConsoleTeste //nome do projeto
+{
+    class ManipuladorNumero //nome de acordo com o projeto
+    {
+        public int fatorial(int num)
+        {
+            int resultado;
+            if (num == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                resultado = fatorial(num - 1) * num;
+                return resultado;
+            }
+        }
+        public static void Main(string[] args)
+        {
+            ManipuladorNumero n = new ManipuladorNumero();
+            WriteLine("Digite um número");
+            int numero=Convert.ToInt32(Console.ReadLine());
+            WriteLine("O fatorial do Número digitado é: {0}",n.fatorial(numero));
+        }
+    }
+}
+_______________________________________________________________________________________________________
+Exemplo 02:
+using static System.Console;
+
+namespace ConsoleTeste //nome do projeto
+{
+    class Soma //nome de acordo com o projeto
+    {
+        static double soma(double n1, double n2)
+        {
+            return (n1 + n2);
+        }
+        static void Main(string[] args)
+        {
+            WriteLine("Digite o 1° valor");
+            double n1=Convert.ToDouble(Console.ReadLine());
+            WriteLine("Digite o 2° Valor");
+            double n2=Convert.ToDouble(Console.ReadLine());
+            WriteLine("A soma dos valores foi: {0}", soma(n1,n2));
+        }
+    }
+}
+_________________________________________________________________________________________________________
+exemplo 03:using static System.Console;
+
+namespace ConsoleTeste //nome do projeto
+{
+    class Soma //nome de acordo com o projeto
+    {
+        static double soma(double n1, double n2)
+        {
+            return (n1 + n2);
+        }
+        static double media(double n1, double n2) //aparentemente pode-se usar a mesma váriavel em métodos diferentes
+        {
+            return (n1 + n2)/2;
+        }
+        static double subtracao(double n1, double n2)
+        {
+            return (n1 - n2);
+        }
+        static double divisao(double n1, double n2)
+        {
+            return n1 / n2;
+        }
+        static double multiplicacao(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+        static void Main(string[] args)
+        {
+            WriteLine("Digite o 1° valor");
+            double n1=Convert.ToDouble(ReadLine());
+            WriteLine("Digite o 2° Valor");
+            double n2=Convert.ToDouble(ReadLine());;
+            WriteLine("A soma dos valores foi: {0}", soma(n1,n2));
+            WriteLine("A média dos valores foi: {0}", media(n1,n2));
+            WriteLine("A divisão dos valores foi: {0}", divisao(n1, n2));
+            WriteLine("A subtração dos valores foi: {0}", subtracao(n1, n2));
+            WriteLine("A multiplicação dos valores foi: {0}", multiplicacao(n1, n2));
+        }
+    }
+}
+__________________________________________________________________________________________________________
+Exemplo 04:
+using static System.Console;
+
+namespace ConsoleTeste //nome do projeto
+{
+    class Menu //nome de acordo com o projeto
+    {
+        public static void printmenu(string[] options)
+        {
+            foreach (var option in options)
+            {
+                WriteLine(option);
+            }
+            Write("Escolha a sua opção:");
+        }
+        public static void Main(string[] args)
+        {
+            WriteLine("Meu primeiro menu C# Console");
+            String[] options = { "1 - Opção", "2- Opção 2", "3 - Opção 3", "4 - Sair" };
+            int option = 0;
+            while (true)
+            {
+                printmenu(options);
+                try //usa-se para prever erros
+                {
+                    option = Convert.ToInt32(ReadLine());
+                }
+                catch (System.FormatException)
+                {
+                    WriteLine("Por Favor, Digite uma opção entre 1 e " + options.Length);
+                    continue;
+                }
+                catch (Exception)
+                {
+                    WriteLine("Um erro aconteceu!! Tente novamente.");
+                    continue;
+                }
+                switch (option)
+                {
+                    case 1:
+                        option1();
+                        break;
+                    case 2:
+                        option2();
+                        break;
+                    case 3:
+                        option3();
+                        break;
+                    case 4:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        WriteLine("Por favor, Digite uma opção entre 1 e "+options.Length);
+                        break;
+                }
+            }
+        }
+        private static void option3()
+        {
+            WriteLine("Executando a opção 3:");
+        }
+        private static void option2()
+        {
+            WriteLine("Executando a opção 2:");
+        }
+        private static void option1()
+        {
+            WriteLine("executando a opção 1:");
+        }
+    }
+}

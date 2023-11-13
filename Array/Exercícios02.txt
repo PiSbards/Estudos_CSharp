@@ -1,0 +1,65 @@
+Exercício 05:
+using static System.Console;
+
+int[] A = {1,2,3,4,5};
+int[] B = { 10, 20, 30, 40, 50 };
+int[] C = new int [5];
+
+for (int i = 0; i < 5; i++)
+{
+    C[i]= A[i] * B[i];
+}
+WriteLine("-----------------------------");
+WriteLine("ARRAY A");
+WriteLine("-----------------------------");
+foreach (int item in A)
+{
+    WriteLine(item);
+}
+WriteLine("-----------------------------");
+WriteLine("ARRAY B");
+WriteLine("-----------------------------");
+foreach (int item2 in B)
+{
+    WriteLine(item2);
+}
+WriteLine("-----------------------------");
+WriteLine("ARRAY C");
+WriteLine("-----------------------------");
+foreach (int item3 in C)
+{
+    WriteLine(item3);
+}
+ReadKey();
+
+outra versão:
+using static System.Console;
+
+int[] A = {1,2,3,4,5};
+int[] B = { 10, 20, 30, 40, 50 };
+int[] C = new int [5];
+
+for (int i = 0; i < 5; i++)
+{
+    C[i]= A[i] * B[i];
+    WriteLine(A[i]+ " X " + B[i] + " = " + C[i] );
+}
+_______________________________________________________________
+Exercício 06:(não finalizado) - acessar dontpad
+using static System.Console;
+
+int[] numeros = new int[10];
+int menor, maior; 
+WriteLine("Digite 10 números");
+WriteLine("Pressione ENTER para cada número");
+for (int i = 0; i < numeros.Length; i++)
+{
+    WriteLine("Digite o número " + (i + 1));
+    if ()
+    {
+
+    }
+}
+
+
+ReadKey();

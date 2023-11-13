@@ -1,0 +1,208 @@
+>>>Exercício 1
+using static System.Console;
+
+int n1, n2;
+
+Write("<<<Qual é o maior>>>");
+WriteLine("");
+WriteLine("Digite o 1º número:");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Digite o 2º número:");
+n2 = Convert.ToInt32(ReadLine());
+if (n1 > n2)
+{
+    WriteLine("<<< O 1º número é maior! >>>");
+}
+else
+{
+    WriteLine("<<< O 2º número é maior! >>>");
+}
+ReadKey();
+
+>>>Exercício 2
+using static System.Console;
+
+int n1, n2, n3;
+
+Write("<<< Qual é o maior de 3 números >>>");
+WriteLine("");
+WriteLine("Digite o 1º número:");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Digite o 2º número:");
+n2 = Convert.ToInt32(ReadLine());
+WriteLine("Digite o 3º número:");
+n3 = Convert.ToInt32(ReadLine());
+if (n1 > n2 && n1 > n3)
+{
+    WriteLine("<<< O 1º número é maior! >>>");
+}
+else if (n2 > n1 && n2 > n3)
+{
+    WriteLine("<<< O 2º número é maior! >>>");
+}
+else
+{
+    WriteLine("<<< O 3º número é maior! >>>");
+}
+ReadKey();
+
+>>>Exercício 3
+using static System.Console;
+
+double n1, n2, media;
+
+Write("<<< Média do Aluno >>>");
+WriteLine("");
+WriteLine("Digite o 1º nota:");
+n1 = Convert.ToDouble(ReadLine());
+WriteLine("Digite o 2º nota:");
+n2 = Convert.ToDouble(ReadLine());
+media = (n1 + n2) / 2;
+if (media == 10)
+{
+    WriteLine("<<< Aprovado com distinção!!!! >>>");
+}
+else if (media >= 7)
+{
+    WriteLine("<<< Aprovado!!! >>>");
+}
+else
+{
+    WriteLine("<<< Que pena!!! Reprovou >>>");
+}
+ReadKey();
+
+>>>Exercício 4
+using static System.Console;
+
+double n1, n2, n3;
+
+Write("<<< Produto mais barato >>>");
+WriteLine("");
+WriteLine("Digite o 1º preço do produto:");
+n1 = Convert.ToDouble(ReadLine());
+WriteLine("Digite o 2º preço do produto:");
+n2 = Convert.ToDouble(ReadLine());
+WriteLine("Digite o 3º preço do produto:");
+n3 = Convert.ToDouble(ReadLine());
+if (n1 < n2 && n1 < n3)
+{
+    WriteLine("<<< O 1º produto é mais barato!!!! >>>");
+}
+else if (n2 < n1 && n2 < n3)
+{
+    WriteLine("<<< O 2º produto é mais barato!!! >>>");
+}
+else
+{
+    WriteLine("<<< O 3º produto é mais barato!!! >>>");
+}
+ReadKey();
+
+>>>Exercício 5
+using static System.Console;
+
+double n1;
+
+Write("<<< Número par ou ímpar >>>");
+WriteLine("");
+WriteLine("Digite um número:");
+n1 = Convert.ToDouble(ReadLine());
+if (n1%2 == 0)
+{
+    WriteLine("<<< O número é par!!!! >>>");
+}
+else
+{
+    WriteLine("<<< O número é ímpar!!! >>>");
+}
+ReadKey();
+
+>>>Exercício 6
+using static System.Console;
+
+int idade;
+
+Write("<<< Doador de Sangue >>>");
+WriteLine("");
+WriteLine("Digite sua idade:");
+idade = Convert.ToInt32(ReadLine());
+if (idade >= 18 && idade <= 67)
+{
+    WriteLine("<<< É doador de sangue!!!! >>>");
+}
+else
+{
+    WriteLine("<<< Não pode doar sangue!!! >>>");
+}
+ReadKey();
+
+>>>Exercício 7
+using static System.Console;
+
+int a, b, c;
+
+Write("<<< Mudando valores de Variáveis >>>");
+WriteLine("");
+a = 10;
+b = 20;
+WriteLine($"Valor inicial da variável A: {a}");
+WriteLine($"Valor inicial da variável B: {b}");
+c = 10;
+a = 20;
+b = c;
+WriteLine("####################################");
+WriteLine($"Valor da variável A: {a}");
+WriteLine($"Valor da variável B: {b}");
+ReadKey();
+
+>>>Exercício 8
+using static System.Console;
+
+int vendas;
+double totalvendas, salario, porcentual, comissao, salariofinal, porcentual2, vendas2, vendas3;
+
+porcentual2 = 5.0 / 100.0;
+
+Write("<<< Salário do Vendedor >>>");
+WriteLine("");
+WriteLine("Quantos carros vendeu este mês?");
+vendas = Convert.ToInt32(ReadLine());
+WriteLine("Qual foi o total em R$ de suas vendas?");
+totalvendas = Convert.ToDouble(ReadLine());
+WriteLine("Qual é o seu salário fixo em R$?");
+salario = Convert.ToDouble(ReadLine());
+WriteLine("Qual é o seu porcentual por carro vendido?");
+porcentual = Convert.ToDouble(ReadLine());
+WriteLine("####################################");
+porcentual = porcentual / 100.0;
+vendas2 = totalvendas * porcentual;
+vendas3 = vendas2 / vendas;
+WriteLine($"A comissão por carro vendido será de R$ {vendas3}");
+salariofinal = salario + (salario * porcentual) + vendas2;
+WriteLine($"O salário final será de R$ {salariofinal}");
+ReadKey();
+
+>>>Exercício 9
+using static System.Console;
+
+double far, cel;
+WriteLine("<<< Conversor de Farenheit para Celsius >>>");
+WriteLine("");
+WriteLine("Digite a temperatura em Farenheit");
+far = Convert.ToDouble(ReadLine());
+cel = (far - 32) * 5 / 9;
+WriteLine($"A temperatura em graus Celsius foi de: {Math.Round(cel, 2)}");
+ReadKey();
+
+>>>Exercício 10
+using static System.Console;
+
+double ms, kh;
+WriteLine("<<< Conversor de Velocidade m/s para km/h >>>");
+WriteLine("");
+WriteLine("Digite a velocidade em m/s");
+ms = Convert.ToDouble(ReadLine());
+kh = ms * 3.6;
+WriteLine($"A velocidade em Km/h foi de: {Math.Round(kh, 2)}");
+ReadKey();

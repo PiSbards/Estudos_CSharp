@@ -1,0 +1,96 @@
+Array:
+-Coleção de dados extremamente importantes em qualquer linguagem de programação, sua vantagem está no fato de serem estruturas indexadas
+ou seja, podem ser acessados através de índices, o que garante grande velocidade para as operações;
+-Uma matriz(array) é uma estrutura que representa uma coleção ordenada de valores ou objetos de tamanho fixo com o mesmo tipo.
+-são usados para armazenar vários valores em uma única variável, em vez de declarar variáveis separadas para cada valor;
+
+-Declaração:
+	string[] carros;//em branco
+
+- inserir valores
+	string[] carros={"Volvo","Peugeot, "Nissan"}
+
+- selecionar info e mostrar na tela:
+	string[] carros={"Volvo","Peugeot, "Nissan"}
+	WriteLine(carros[0]);//Nissan = 0; Peugeot = 1; Fiat=2;
+
+-Alterar um valor dentro do array
+	string[] carros={"Volvo","Peugeot, "Nissan"}
+	carros[0] = "Bugati"; //mudando volvo para bulgati
+
+-Interações nos arrays
+	para iterarmos sobre os arrays pode-se usar for, while e principalmente o foreach;
+
+using static System.Console;
+
+string[] carros = { "Nissan", "Peugeot", "Fiat" };
+carros[0]= "Bugati";//Nissan = 0; Peugeot = 1; Fiat=2;
+//modificar um elemento do array
+Array.Sort(carros);
+//colocando em ordem alfabética o array
+foreach (var item in carros)
+{
+    WriteLine(item);
+}
+WriteLine("===========================================");
+WriteLine("Adicionando um item no item no array carros");
+WriteLine("===========================================");
+string novocarro = "Ferrari";
+List<string> novocarros = new List<string>(carros.ToList());
+//adicionar o carro na lista
+novocarros.Add(novocarro);
+//transformo a lista em array
+carros=novocarros.ToArray();
+foreach (var item in carros)
+{
+    WriteLine(item);
+}
+
+ReadKey();
+
+____________________________________________________________
+using static System.Console;
+
+string[] pessoa = { "Joseph", "Mary", "filho do Rob" };
+WriteLine("Array Pessoa");
+WriteLine("Número de nomes: " + pessoa.Length);
+Array.Sort(pessoa);
+foreach (var item in pessoa)
+{
+    WriteLine(item);
+}
+WriteLine("************* ADD NOVO ITEM NO ARRAY************");
+string novapessoa = "Jonas";
+List<string> lista = new List<string>(pessoa.ToList());
+lista.Add(novapessoa);
+pessoa = lista.ToArray();
+Array.Sort(pessoa);
+WriteLine("Número de pessoas: " + pessoa.Length);
+foreach (var item in pessoa)
+{
+    WriteLine(item);
+}
+
+ReadKey();
+________________________________________________________________
+using static System.Console;
+
+string[] pessoa= {"Pietro", "Felps", "Fallen"};
+foreach (var item in pessoa)
+{
+    WriteLine(item);
+}
+WriteLine("************* ADD NOVO ITEM NO ARRAY************");
+string novapessoa = "";
+novapessoa = ReadLine();
+List<string> lista = new List<string>(pessoa.ToList());
+lista.Add(novapessoa);
+pessoa = lista.ToArray();
+Array.Sort(pessoa);
+WriteLine("Número de pessoas: " + pessoa.Length);
+foreach (var item in pessoa)
+{
+    WriteLine(item);
+}
+
+ReadKey();

@@ -1,0 +1,56 @@
+$ = semantica de interpolação, serve para colocar as variaveis onde queremos no texto
+
+F = limita casa decimais no calculo.- utilizar math.round(variavel,n de casas); este cód sempre arredonda para cima
+		string nome;
+		WriteLine("Qual seu nome?");
+		nome=ReadLine();
+		double peso, altura, resultado;
+		WriteLine("Calcule seu IMC, primeiro digite seu peso:");
+		peso = Convert.ToDouble(ReadLine());
+		WriteLine("Agora, digite a sua altura");
+		altura = Convert.ToDouble(ReadLine());
+		resultado = peso / (altura * altura);
+		WriteLine($"Olá {nome} e seu IMC foi:{resultado.ToString("F")}")
+
+
+IF e ELSE
+IF(A>B)  //pode haver quantas quantidades de"IF" que quisermos; 
+{
+   //Código(pode haver outro "IF()" dentro deste código;
+}
+ELSE
+{
+   //código
+}
+
+ELSE IF() //este equivale a outro "IF"
+{
+  //Código
+}
+exemplo:
+		using static System.Console;
+
+		string nome;
+		WriteLine("Qual seu nome?");
+		nome = ReadLine();
+		double peso, altura, resultado;
+		WriteLine("Calcule seu IMC, primeiro digite seu peso:");
+		peso = Convert.ToDouble(ReadLine());
+		WriteLine("Agora, digite a sua altura");
+		altura = Convert.ToDouble(ReadLine());
+		resultado = peso / (altura * altura);
+		if (resultado>=20)
+		{
+    			WriteLine($"Olá {nome} e seu IMC foi:{resultado.ToString("F")} e você esta obeso");
+		}
+		else if(resultado<=15)
+		{
+    			WriteLine($"Olá {nome} e seu IMC foi:{resultado.ToString("F")}e vc esta magro");
+		}
+		else
+		{
+   			 WriteLine($"Olá {nome} e seu IMC foi:{resultado.ToString("F")}você esta muito magro");
+		}
+		ReadKey();
+
+

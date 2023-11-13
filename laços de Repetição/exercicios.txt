@@ -1,0 +1,28 @@
+Exercício 01:
+
+using static System.Console;
+
+int n1, resultado;
+WriteLine("Digite qual número e saiba sua tabuada:");
+n1 = Convert.ToInt32(ReadLine());
+for (int i = 1; i <= 10; i++)
+{
+    resultado = n1 * i;
+    WriteLine($"{n1} X {i} = {resultado}");
+}
+ReadKey();
+
+
+________________________________________________
+
+Exercício 02:
+using static System.Console;
+
+string[] nomes = { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Espirito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do sul","Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco","Piauí", "Rio de Janeiro", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins", "Distrito Federal" };
+WriteLine("Os estados do Brasil são:");
+foreach (string estados in nomes)
+{
+    WriteLine(estados);
+}
+
+ReadKey();

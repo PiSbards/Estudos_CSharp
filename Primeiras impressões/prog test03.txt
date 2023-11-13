@@ -1,0 +1,86 @@
+Exemplo de swicth
+inicio:
+int opçao = 0;
+WriteLine("Digite uma opção de 1 a 3:");
+opçao=Convert.ToInt32(Console.ReadLine());
+switch (opçao)
+{
+    case 1:
+        WriteLine("Você digitou a opção 1");
+        break;
+    case 2:
+        WriteLine("Você digitou a opção 2");
+        break;
+    case 3:
+        WriteLine("Você digitou a opção 3");
+        break;
+    default:
+        WriteLine("opção invalida");
+        break;
+}
+goto inicio;
+ReadKey();
+
+Exemplo 02 de switch
+
+inicio:
+
+goto inicio;
+string mes = "";
+WriteLine("Digite um mês");
+mes=ReadLine();
+switch (mes)
+{
+    case "Janeiro":
+    case "Março":
+    case "Maio":
+    case "Julho":
+    case "Agosto":
+    case "Outubro":
+    case "Dezembro":
+        WriteLine("Este mês tem 31 dias");
+        break;
+    case "Fevereiro":
+        WriteLine("Este mês tem 28 ou 29 dias!" );
+        break;
+    default:
+        WriteLine("Este mês tem 30 dias!");
+        break;
+}
+ReadLine();
+
+Exemplo 03:
+using static System.Console;
+
+char op;
+double um, dois, resultado;
+Write("Digite o primeiro número:");
+um=Convert.ToDouble(Console.ReadLine());
+Write("Digite o segundo número:");
+dois=Convert.ToDouble(Console.ReadLine());
+Write("Qaul a operação (+,-,*,/)?");
+op = (char)Read();
+switch (op)
+{
+    case '+':
+        resultado = um + dois;
+        WriteLine("{0} + {1}={2}", um, dois, resultado);
+        break;
+    case '-':
+        resultado = um - dois;
+        WriteLine("{0} - {1} = {2}", um,dois,resultado);
+        break;
+    case '*':
+        resultado = um * dois;
+        WriteLine("{0}*{1} = {2}", um, dois, resultado);
+        break;
+    case '/':
+        resultado = um / dois;
+        WriteLine("{0}/{1}={2}", um,dois,resultado);
+        break;
+    default:
+        WriteLine("opção invalida");
+        break;
+}
+
+ReadKey();

@@ -1,0 +1,168 @@
+Aluno: Pietro Sbardellati;
+
+exercícios 01:
+using static System.Console;
+
+namespace Calculadora
+{
+    class Menu
+    {
+        public static void printmenu(string[] options)
+        {
+            foreach (var option in options)
+            {
+                WriteLine(option);
+            }
+            Write("Selecione uma operação:");
+        }
+        public static void Main(string[] args)
+        {
+            String[] options = { "1 - Soma", "2 - Subtração", "3 - Multiplicação", "4 - Divisão","5 - Sair" };
+            int option = 0;
+            while (true)
+            {
+                printmenu(options);
+                try
+                {
+                    option = Convert.ToInt32(ReadLine());
+                }
+                catch (System.FormatException)
+                {
+                    WriteLine("Por Favor, Digite uma opção entre 1 e " + options.Length);
+
+                }
+                catch (Exception)
+                {
+                    WriteLine("Um erro aconteceu!! Tente novamente.");
+
+                }
+                WriteLine("Digite o 1º valor");
+                double n1 = Convert.ToDouble(ReadLine());
+                WriteLine("Digite o 2º valor");
+                double n2 = Convert.ToDouble(ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        Clear();
+                        WriteLine("============================");
+                        WriteLine("Resultado: {0}", soma(n1, n2));
+                        WriteLine("============================");
+                        break;
+                    case 2:
+                        Clear();
+                        WriteLine("============================");
+                        WriteLine("Resultado: {0}", subtração(n1, n2));
+                        WriteLine("============================");
+                        break;
+                    case 3:
+                        Clear();
+                        WriteLine("============================");
+                        WriteLine("Resultado: {0}", multiplicação(n1, n2));
+                        WriteLine("============================");
+                        break;
+                    case 4:
+                        Clear();
+                        WriteLine("============================");
+                        WriteLine("Resultado: {0}", divisão(n1, n2));
+                        WriteLine("============================");
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        WriteLine("Por favor, Digite uma opção entre 1 e " + options.Length);
+                        break;
+                }
+            }
+        }
+        public static double multiplicação(double n1, double n2)
+        {
+            
+            return n1 * n2;
+        }
+        public static double subtração(double n1, double n2)
+        {
+            return n1 - n2;
+        }
+        public static double soma(double n1, double n2)
+        {
+            return n1+n2;
+        }
+        public static double divisão(double n1, double n2)
+        {
+            return n1 / n2;
+        }
+    }
+}
+________________________________________________________________________________________________________
+Exercício 02:
+using static System.Console;
+using System;
+using System.Text;
+
+namespace DesafioTiozao2
+{
+    class Exercicio02
+    {
+        public static void Main()
+        {
+            StringBuilder frase = new StringBuilder();
+            WriteLine("Escreva uma frase: ");
+            frase.Append(ReadLine());
+            subs(frase);
+            Clear();
+            WriteLine("===================================");
+            WriteLine(frase);
+            WriteLine("===================================");
+            ReadKey();
+        }
+        public static void subs(StringBuilder frase)
+        {
+            for (int i = 0; i < frase.Length; i++)
+            {
+
+                if (frase[i] == 'a')
+                {
+                    frase[i] = '&';
+                }
+                if (frase[i] == 'A')
+                {
+                    frase[i] = '&';
+                }
+
+            }
+
+        }
+    }
+}
+__________________________________________________________________________________________________________
+Exercício 03:
+using static System.Console;
+
+namespace DesafioTiozao3
+{
+    class exercicio3
+    {
+        public static double Calculo(double salario)
+        {
+            if (salario < 1700)
+            {
+                salario += 300;
+            }
+            else if(salario > 1700)
+            {
+                salario += 200;
+            }
+            return salario;
+
+        }
+        public static void Main()
+        {
+            WriteLine("Escreva o Salário para efetuar o reajuste: ");
+            double salario = Convert.ToDouble(ReadLine());
+            Calculo(salario);
+            WriteLine($"Após o cálculo do reajuste o salário ficou no valor de: R${Calculo(salario)}");
+            ReadKey();
+        }
+    }
+}

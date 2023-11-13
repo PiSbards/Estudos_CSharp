@@ -1,0 +1,13 @@
+using static System.Console;
+string nome = "";
+int n1,n2,n3, media;
+WriteLine("Qual seu nome?");
+nome = ReadLine();
+WriteLine("seu nome é: "+ nome);
+WriteLine("Quando você nasceu?");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Em que anos estamos?");
+n2 = Convert.ToInt32(ReadLine());
+media = n2 - n1;
+WriteLine($"Sua idade é{media}");
+ReadKey();

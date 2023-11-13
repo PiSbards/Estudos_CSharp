@@ -1,0 +1,9 @@
+using static System.Console;
+int a, b, media;
+WriteLine(" ");
+a= Convert.ToInt32(ReadLine());
+WriteLine(" ");
+b = Convert.ToInt32(ReadLine());
+media = (a + b ) / 2;
+WriteLine(" " + media);
+ReadKey();
